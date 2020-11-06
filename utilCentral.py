@@ -10,7 +10,7 @@ def opcionValidar(opciones):
 
 def menuPrincipal(opciones, intentos):
     os.system("cls")
-    while opciones[9]==0:
+    while opciones[2]==0:
         print("1. Jugar\n2. Configuracion\n3. Highscores\n4. Salir")
         opcionPrincipal=opcionValidar(["1","2","3","4"])
         if opcionPrincipal == "1":
@@ -23,30 +23,32 @@ def menuPrincipal(opciones, intentos):
             regresar=opcionValidar(['1'])
             os.system("cls")
         else:
-            opciones[9]=1
+            opciones[2]=1
     os.system("cls")
 
 def menuJugar(opciones, intentos):
     os.system("cls")
-    while opciones[9]==0 and opciones[7]==0:
+    while opciones[2]==0 and opciones[0]==0:
         print("1. Un jugador\n2. Dos jugadores\n3. Regresar\n4. Salir")
         opcionJugar=opcionValidar(["1","2","3","4"])
         if opcionJugar=="1":
             resultados=juego.juegoUnJugador(int(intentos[0]))
             resultadosGrabar(resultados)
         elif opcionJugar=="2":
+            os.system("cls")
             print("En construccion\n1. Regresar")
             regresar=opcionValidar(['1'])
+            os.system("cls")
         elif opcionJugar=="3":
-            opciones[7]=1
+            opciones[0]=1
         else:
-            opciones[9]=1
-    opciones[7]=0
+            opciones[2]=1
+    opciones[0]=0
     os.system("cls")
 
 def menuConfiguracion(opciones, intentos):
     os.system("cls")
-    while opciones[9]==0 and opciones[8]==0:
+    while opciones[2]==0 and opciones[1]==0:
         print("1. Configurar intentos\n2. Regresar\n3. Salir")
         opcionConfig=opcionValidar(["1","2","3"])
         if opcionConfig == "1":
@@ -55,10 +57,10 @@ def menuConfiguracion(opciones, intentos):
             intentos[0] = opcionValidar(["5", "10", "15"])
             os.system("cls")
         elif opcionConfig == "2":
-            opciones[8] = 1
+            opciones[1] = 1
         elif opcionConfig == "3":
-            opciones[9] = 1
-    opciones[8]=0
+            opciones[2] = 1
+    opciones[1]=0
     os.system("cls")
 
 def resultadosGrabar(resultados):
