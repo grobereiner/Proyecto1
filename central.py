@@ -4,9 +4,9 @@ import os
 
 os.system("cls")
 
-opciones=[0,0,0]
+controlAbandondo=[0,0,0]
 intentos = [5]
 
-utilCentral.menuPrincipal(opciones, intentos)
+utilCentral.menuPrincipal(controlAbandondo, intentos)
 
 os.system("cls")

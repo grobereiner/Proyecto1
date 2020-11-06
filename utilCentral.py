@@ -66,7 +66,7 @@ def menuConfiguracion(opciones, intentos):
 def resultadosGrabar(resultados):
     archivo = open("resultados.csv", "a")
     for i in range(len(resultados)-1):
-        archivo.write(resultados[i]+", ")
+        archivo.write(str(resultados[i])+", ")
     archivo.write(str(resultados[len(resultados)-1])+"\n")
     archivo.close()
 
