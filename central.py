@@ -2,11 +2,15 @@ import juego
 import utilCentral
 import os
 
-os.system("cls")
+def main():
 
-controlAbandondo=[0,0,0]
-intentos = [5]
+    os.system("cls")
 
-utilCentral.menuPrincipal(controlAbandondo, intentos)
+    controlAbandondo=[0,0,0]
+    intentos = [5]
 
-os.system("cls")
+    utilCentral.menuPrincipal(controlAbandondo, intentos)
+
+    os.system("cls")
+
+main()
