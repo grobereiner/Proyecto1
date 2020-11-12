@@ -1,36 +1,36 @@
-import utilJuego
+import funcJuego
 import os
 
 def juegoUnJugador(intentos):
-    palabra, palabraMuestra = utilJuego.palabraSeleccionada()
+    palabra, palabraMuestra = funcJuego.palabraSeleccionada()
     errores = 0
     puntaje = 0
     tiempo = [0]
 
     while not errores==intentos:
         os.system("cls")
-        utilJuego.dibujoN(intentos, errores)
-        utilJuego.palabraImprimir(palabraMuestra)
+        funcJuego.dibujoN(intentos, errores)
+        funcJuego.palabraImprimir(palabraMuestra)
 
-        if utilJuego.palabraCompleta(palabraMuestra, palabra):
-            nombre=utilJuego.resultados(puntaje, tiempo, 'G')
-            utilJuego.ignorar()
+        if funcJuego.palabraCompleta(palabraMuestra, palabra):
+            nombre=funcJuego.resultados(puntaje, tiempo, 'G')
+            funcJuego.ignorar()
             os.system("cls")
             return [nombre[:5], puntaje, round(tiempo[0],2), "Gano",  intentos,  errores]
       
-        letra=utilJuego.caracterObtener(tiempo)
+        letra=funcJuego.caracterObtener(tiempo)
         
-        if utilJuego.caracterComprobar(letra, palabra):
+        if funcJuego.caracterComprobar(letra, palabra):
             if not letra in palabraMuestra:
                 puntaje+=1
-            utilJuego.caracterReemplazar(letra, palabraMuestra, palabra)   
+            funcJuego.caracterReemplazar(letra, palabraMuestra, palabra)   
         else:
             errores+=1
     else:
         os.system("cls")
-        utilJuego.dibujoN(intentos, errores)
-        utilJuego.palabraImprimir(palabraMuestra)
-        nombre=utilJuego.resultados(puntaje, tiempo, 'P')
-        utilJuego.ignorar()
+        funcJuego.dibujoN(intentos, errores)
+        funcJuego.palabraImprimir(palabraMuestra)
+        nombre=funcJuego.resultados(puntaje, tiempo, 'P')
+        funcJuego.ignorar()
         os.system("cls")
         return [nombre[:5], puntaje, round(tiempo[0],2), "Perdio",  intentos,  intentos]
