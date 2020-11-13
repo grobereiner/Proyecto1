@@ -9,13 +9,13 @@ import os
 
 def main():
 
-    os.system("cls")
+    os.system("clear")
 
     controlAbandondo=[0,0,0]
     intentos = [5]
 
     funcMain.menuPrincipal(controlAbandondo, intentos)
 
-    os.system("cls")
+    os.system("clear")
 
 main()
