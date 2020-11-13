@@ -1,7 +1,7 @@
 import random
 import time
 
-alfabeto=[chr(a) for a in range(97, 123)] + [chr(b) for b in range(65,91)]
+alfabeto=[chr(a) for a in range(97, 123)] + [chr(b) for b in range(65,91)]+['1','2','3','4','5','6','7','8','9','0']
 
 def resultados(puntaje, tiempo, estado):
     if estado=='G':
